@@ -1,5 +1,5 @@
-linux_box
-=========
+Chef Blueprint: linux_box
+=========================
 
 #Description
 
