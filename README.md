@@ -149,8 +149,7 @@ To re-fetch all the cookbooks in `cookbooks/` per the `Cheffile`, run the follow
 
 TODO: MANIFEST file.
 
-License and Author
-==================
+##License and Author
 
 Author:: Chris Fordham (<chris [at] fordham [hyphon] nagy [dot] id [dot] au>)
 
