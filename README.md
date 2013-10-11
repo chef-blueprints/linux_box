@@ -36,6 +36,7 @@ See the `Cheffile.lock` for details on their upstream sources.
 ##Chef Attributes
 
 See the `share/chef` folder for examples on attribute usage using a `node.json`.
+
 TODO: guide on main attributes and their usage
 
 #Quick Start
@@ -44,13 +45,11 @@ TODO: guide on main attributes and their usage
 
 ###Install VirtualBox
 
-Follow the VirtualBox (or your OS/distribution) documentation to install VirtualBox if not already installed.
-https://www.virtualbox.org/wiki/Documentation‎
+Follow the VirtualBox (or your OS/distribution) documentation to install VirtualBox if not already installed, see https://www.virtualbox.org/wiki/Documentation.‎
 
 ###Install Vagrant
 
-Follow the Vagrant (or your OS/distribution) documentation to install Vagrant (latest version recommended).
-http://docs.vagrantup.com/v2/installation/index.html
+Follow the Vagrant (or your OS/distribution) documentation to install Vagrant (latest version recommended), see http://docs.vagrantup.com/v2/installation/index.html.
 
 ###Install Librarian for Chef
 
@@ -67,13 +66,13 @@ Or alternatively, download and extract the zip https://github.com/chef-blueprint
 
 ###Fetch the cookbooks with Librarian
 
-  $ librarian-chef install
+	$ librarian-chef install
   
 ###Setup a Vagrantfile
 
 Copy the default Vagrantfile from `share/vagrant`:
 
-  $ cp -v share/vagrant/Vagrantfile.default Vagrantfile
+	$ cp -v share/vagrant/Vagrantfile.default Vagrantfile
 
 ###Setup node.json
 
@@ -91,7 +90,7 @@ Already up'd a linux_box?
 	#vagrant suspend                  # suspend the vm
 	#vagrant halt                     # power down the vm
 	#vagrant destroy                  # destroy the vm
-	#vagrant box remove linux_server  # remove the box
+	#vagrant box remove linux_box     # remove the box
 
 ####Run the virtual machine
 
@@ -123,7 +122,7 @@ Its also possible to run with the cookbooks source as remote. This is handy beca
 	
 And with a specific tag such as `0.0.1`:
 
-	# chef-solo -r https://github.com/rightscale-blueprints/linux_server/tarball/0.0.1
+	# chef-solo -r https://github.com/rightscale-blueprints/linux_box/tarball/0.0.1
 
 For more information on using Chef Solo, see http://wiki.opscode.com/display/chef/Chef+Solo
 
