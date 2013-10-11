@@ -94,7 +94,8 @@ Already up'd a linux_box?
 #####Run the virtual machine
 
 Add a new box and up it (default in `Vagrantfile` is Debian 7.10, Ubuntu 12.04 is also tested and supported).
-Vagrant will automatically add a new box per the Vagrantfile if not already created.
+
+Vagrant will automatically add a new box per the Vagrantfile if not already created (including download).
 
 	$ vagrant up
 
