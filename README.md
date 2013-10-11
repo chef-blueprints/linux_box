@@ -44,11 +44,11 @@ TODO: guide on main attributes and their usage
 
 ####Install VirtualBox
 
-Follow the VirtualBox (or your OS/distribution) documentation to install VirtualBox if not already installed, see https://www.virtualbox.org/wiki/Documentation.‎
+Follow the VirtualBox (or your OS/distribution) documentation to install VirtualBox if not already installed, see https://www.virtualbox.org/wiki/Documentation
 
 ####Install Vagrant
 
-Follow the Vagrant (or your OS/distribution) documentation to install Vagrant (latest version recommended), see http://docs.vagrantup.com/v2/installation/index.html.
+Follow the Vagrant (or your OS/distribution) documentation to install Vagrant (latest version recommended), see http://docs.vagrantup.com/v2/installation/index.html
 
 ####Install Librarian for Chef
 
@@ -75,7 +75,7 @@ Copy the default Vagrantfile from `share/vagrant`:
 
 ####Setup node.json
 
-Copy the default node.json from `share/chef` to get started using a basic run_list and set of node attributes.
+Copy the default node.json from `share/chef` to get started using a basic `run_list` and set of node attributes.
 
 	$ cp -v share/chef/node.json.default node.json
 
@@ -133,18 +133,20 @@ TODO
 
 ###Updating cookbooks
 
-Set this environment variable to strip .git from each cookbook checkout:
+Set this environment variable to strip `.git` from each cookbook checkout:
 
 	$ export LIBRARIAN_CHEF_INSTALL__STRIP_DOT_GIT=1
 
-To update a cookbook (example, sudo):
+To update a cookbook, for example, sudo:
 	
 	$ librarian-chef update sudo
 
-To re-fetch all the cookbooks in `cookbooks/` per the `Cheffile`, run the following:
+To cleanly re-fetch all the cookbooks in `cookbooks/` per the `Cheffile`, run the following:
 
-	$ librarian-chef install --clean
-	
+	$ rm Cheffile.lock; librarian-chef install --clean
+
+For more information on usage, see https://github.com/applicationsonline/librarian-chef
+
 ##Errata
 
 TODO: MANIFEST file.
