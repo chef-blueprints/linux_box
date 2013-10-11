@@ -1,0 +1,8 @@
+{
+  "system": {
+    "short_hostname":"linux",
+    "domain_name":"localdomain",
+    "upgrade_packages":"false"
+  },
+  "run_list": [ "recipe[system]", "recipe[system::update_package_list]", "recipe[system::upgrade_packages]", "recipe[ntp]", "recipe[resolver]", "recipe[cron]", "recipe[sudo]", "recipe[postfix]" ]
+}
