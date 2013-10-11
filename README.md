@@ -1,22 +1,21 @@
-Chef Blueprint: linux_box
-=========================
+#Chef Blueprint: linux_box
 
-#Description
+##Description
 
 A Chef Blueprint for a Linux (base) box/host.
 
-#Requirements
+##Requirements
 
 * Chef 0.10.10 or higher (earlier versions may work with some cookbooks/recipes)
 * A Linux host or guest environment
 * Vagrant 1.2 or higher (if using Vagrant)
 * Git (if checking out the source from GitHub)
 
-#Usage
+##Usage
 
 See the Quick Start below to get started.
 
-##Cookbooks
+###Cookbooks
 
 The following core cookbooks are included:
 
@@ -33,29 +32,29 @@ Additional/depends cookbooks:
 
 See the `Cheffile.lock` for details on their upstream sources.
 
-##Chef Attributes
+###Chef Attributes
 
 See the `share/chef` folder for examples on attribute usage using a `node.json`.
 
 TODO: guide on main attributes and their usage
 
-#Quick Start
+##Quick Start
 
-##VirtualBox with Vagrant
+###VirtualBox with Vagrant
 
-###Install VirtualBox
+####Install VirtualBox
 
 Follow the VirtualBox (or your OS/distribution) documentation to install VirtualBox if not already installed, see https://www.virtualbox.org/wiki/Documentation.‎
 
-###Install Vagrant
+####Install Vagrant
 
 Follow the Vagrant (or your OS/distribution) documentation to install Vagrant (latest version recommended), see http://docs.vagrantup.com/v2/installation/index.html.
 
-###Install Librarian for Chef
+####Install Librarian for Chef
 
 	$ gem install librarian-chef --no-rdoc --no-ri
 
-###Clone the linux_box Chef Blueprint
+####Clone the linux_box Chef Blueprint
 
 	$ mkdir -p ~/src/github/chef-blueprints
 	$ cd ~/src/github/chef-blueprints
@@ -64,23 +63,23 @@ Follow the Vagrant (or your OS/distribution) documentation to install Vagrant (l
 
 Or alternatively, download and extract the zip https://github.com/chef-blueprints/linux_box/archive/master.zip
 
-###Fetch the cookbooks with Librarian
+####Fetch the cookbooks with Librarian
 
 	$ librarian-chef install
   
-###Setup a Vagrantfile
+####Setup a Vagrantfile
 
 Copy the default Vagrantfile from `share/vagrant`:
 
 	$ cp -v share/vagrant/Vagrantfile.default Vagrantfile
 
-###Setup node.json
+####Setup node.json
 
 Copy the default node.json from `share/chef` to get started using a basic run_list and set of node attributes.
 
 	$ cp -v share/chef/node.json.default node.json
 
-###Run with Vagrant
+####Run with Vagrant
 
 Already up'd a linux_box?
 
@@ -92,7 +91,7 @@ Already up'd a linux_box?
 	#vagrant destroy                  # destroy the vm
 	#vagrant box remove linux_box     # remove the box
 
-####Run the virtual machine
+#####Run the virtual machine
 
 Add a new box and up it (default in `Vagrantfile` is Debian 7.10, Ubuntu 12.04 is also tested and supported).
 Vagrant will automatically add a new box per the Vagrantfile if not already created.
@@ -105,7 +104,7 @@ Need debug?
 	
 This uses the `Vagrantfile` and `node.json` (for the Chef Solo provisioning) residing in the root of the repository, copied above.
 
-##Chef Solo
+###Chef Solo
 
 Using the Vagrant/VirtualBox process above is recommended for desktop/workstations users and will provide an operational Linux box, out-of-box.
 The instructions below demonstrate usage with Chef Solo standalone. Commands are relative the root of the repository.
@@ -126,13 +125,13 @@ And with a specific tag such as `0.0.1`:
 
 For more information on using Chef Solo, see http://wiki.opscode.com/display/chef/Chef+Solo
 
-##RightScale
+###RightScale
 
 TODO
 
-#Using Librarian
+##Using Librarian
 
-##Updating cookbooks
+###Updating cookbooks
 
 Set this environment variable to strip .git from each cookbook checkout:
 
@@ -146,7 +145,7 @@ To re-fetch all the cookbooks in `cookbooks/` per the `Cheffile`, run the follow
 
 	$ librarian-chef install --clean
 	
-#Errata
+##Errata
 
 TODO: MANIFEST file.
 
