@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+# https://github.com/opscode-cookbooks/apt
+# version requirements, https://github.com/opscode-cookbooks/apt#requirements
+# older version is used explicitly for Chef 10 support
+cookbook 'apt',
+  :ref => 'master'
+    
+# https://github.com/opscode-cookbooks/cron
+cookbook 'cron',
+  :ref => 'master'
+
+# https://github.com/opscode-cookbooks/ntp
+cookbook 'ntp',
+  :ref => 'master'
+
+# https://github.com/opscode-cookbooks/postfix  
+cookbook 'postfix',
+  :ref => 'master'
+
+# https://github.com/opscode-cookbooks/sudo
+cookbook 'sudo',
+  :ref => 'master'
+
+# TODO: migrate cookbook to xhost-cookbooks and update with version
+cookbook 'system',
+  :git => 'https://github.com/flaccid/cookbooks',
+  :path => 'cookbooks/system',
+  :ref => 'master'
+
+# TODO: contribute enhancements back upstream to Opscode
+cookbook 'resolver',
+  :git => 'https://github.com/flaccid/cookbooks',
+  :path => 'cookbooks/resolver',
+  :ref => 'master'
