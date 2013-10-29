@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.box_url = "http://files.vagrantup.com/precise64.box"                                                # Ubuntu 12.04
   
   # vagrant-omnibus plugin
-  config.omnibus.chef_version = :latest
+  config.omnibus.chef_version = "0.10.10"     # RightLink 5.8
   
   # set this to the IP address of your LAN's router, comment out if not using public_network/bridged
   #default_router = "192.168.0.1"
