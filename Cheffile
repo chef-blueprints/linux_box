@@ -25,11 +25,9 @@ cookbook 'sudo',
   :git => 'https://github.com/opscode-cookbooks/sudo',
   :ref => 'v2.2.0'
 
-# TODO: migrate cookbook to xhost-cookbooks and update with version
 cookbook 'system',
-  :git => 'https://github.com/flaccid/cookbooks',
-  :path => 'cookbooks/system',
-  :ref => 'master'
+  :git => 'https://github.com/xhost-cookbooks/system',
+  :ref => 'v0.0.1'
 
 # TODO: contribute enhancements back upstream to Opscode
 cookbook 'resolver',

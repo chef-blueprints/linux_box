@@ -7,15 +7,6 @@ GIT
     resolver (0.8.2)
 
 GIT
-  remote: https://github.com/flaccid/cookbooks
-  path: cookbooks/system
-  ref: master
-  sha: 6d5150257eac1f71a23849b5bae67887f7d30f7d
-  specs:
-    system (0.0.1)
-      cron (>= 0.0.0)
-
-GIT
   remote: https://github.com/opscode-cookbooks/apt
   ref: 1.7.0
   sha: ea834265247cc8b507ac37ab3a34a9b44ed27a11
@@ -49,6 +40,15 @@ GIT
   sha: ac46f9ee4d16c36f4e7e05522d168eb44af3b304
   specs:
     sudo (2.2.0)
+
+GIT
+  remote: https://github.com/xhost-cookbooks/system
+  ref: v0.0.1
+  sha: 69382aa89b63b9e5ecf711ae8755412cf5d41778
+  specs:
+    system (0.0.1)
+      apt (>= 0.0.0)
+      cron (>= 0.0.0)
 
 DEPENDENCIES
   apt (>= 0)
