@@ -2,10 +2,12 @@
   "server_template": {
     "name":"Linux Box",
     "description":"A basic linux host.",
+    "tags": [ "publisher:name=RightScale Open Source" ],
     "boot_scripts": "node.json",
     "operational_scripts": [],
     "decommission_scripts": [],
     "inputs": "node.json",
+    "frozen_repositories": [],
     "multi_cloud_images": [
       {
         "id": "322234001",
@@ -51,50 +53,113 @@
       },
       {
         "name": "cpu overloaded",
-        "condition": "if cpu-0\/cpu-idle.value < \'3\' for 5 min then escalate to \'critical\'"
+        "description": "",
+        "file": "cpu-0\/cpu-idle.value",
+        "value": "value",
+        "condition": ">",
+        "threshold": "3",
+        "duration": "5",
+        "escalation_name": "critical"
       },
       {
         "name": "high network rx activity",
-        "condition": "if interface\/if_octets-eth0.rx > \'50000000\' for 30 min then escalate to \'critical\'"
+        "description": "",
+        "file": "interface\/if_octets-eth0",
+        "value": "rx",
+        "condition": ">",
+        "threshold": "50000000",
+        "duration": "30",
+        "escalation_name": "critical"
       },
       {
         "name": "high network tx activity",
-        "condition": "if interface\/if_octets-eth0.tx > \'50000000\' for 10 min then escalate to \'critical\'"
+        "description": "",
+        "file": "interface\/if_octets-eth0",
+        "value": "tx",
+        "condition": ">",
+        "threshold": "50000000",
+        "duration": "10",
+        "escalation_name": "critical"
       },
       {
         "name": "instance not responding",
-        "condition": "if cpu-0\/cpu-idle.value == \'NaN\' for 5 min then escalate to \'critical\'"
+        "description": "",
+        "file": "cpu-0\/cpu-idle",
+        "value": "value",
+        "condition": "==",
+        "threshold": "NaN",
+        "duration": "5",
+        "escalation_name": "critical"
       },
       {
         "name": "instance stranded",
-        "condition": "if RS\/server-failure.state == \'stranded\' for 1 min then escalate to 'critical'"
+        "description": "",
+        "file": "RS\/server-failure",
+        "value": "state",
+        "condition": "==",
+        "threshold": "stranded",
+        "duration": "1",
+        "escalation_name": "critical"
       },
       {
         "name": "instance terminated",
-        "condition": "if RS\/server.state == \'terminated\' for 1 min then escalate to \'critical\'"
+        "description": "",
+        "file": "RS\/server",
+        "value": "state",
+        "condition": "==",
+        "threshold": "terminated",
+        "duration": "1",
+        "escalation_name": "critical"
       },
       {
         "name": "low space in mnt partition",
-        "condition": "if df\/df-mnt.free < \'10000000000\' for 5 min then escalate to \'critical\'"
+        "description": "",
+        "file": "df\/df-mnt",
+        "value": "free",
+        "condition": "<",
+        "threshold": "10000000000",
+        "duration": "5",
+        "escalation_name": "critical"
       },
       {
         "name": "low space in root partition",
-        "condition": "if df\/df-root.free < \'1000000000\' for 5 min then escalate to \'critical\'"
+        "description": "",
+        "file": "df\/df-root",
+        "value": "free",
+        "condition": "<",
+        "threshold": "1000000000",
+        "duration": "5",
+        "escalation_name": "critical"
       },
       {
         "name": "low swap space",
-        "condition": "if swap\/swap-free.value < \'100000000\' for 5 min then escalate to \'critical\'"
+        "description": "",
+        "file": "swap\/swap-free",
+        "value": "value",
+        "condition": "<",
+        "threshold": "100000000",
+        "duration": "5",
+        "escalation_name": "critical"
       },
       {
         "name": "memory low",
-        "condition": "if memory\/memory-free.value < \'100\' for 1 min then escalate to \'critical\'"
+        "description": "",
+        "file": "memory\/memory-free",
+        "value": "value",
+        "condition": "<",
+        "threshold": "100",
+        "duration:": "1",
+        "escalation_name": "critical"
       },
       {
         "name": "out of memory",
-        "condition": "if memory\/memory-free.value == \'0\' for 1 min then escalate to \'critical\'"
+        "description": "",
+        "file": "memory\/memory-free",
+        "value": "value",
+        "condition": "==",
+        "threshold": "0",
+        "escalation_name": "critical"
       }
-    ],
-    "frozen_repositories": [],
-    "tags": [ "publisher:name=RightScale Open Source" ]
+    ]
   }
 }
