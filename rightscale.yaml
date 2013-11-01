@@ -1,0 +1,126 @@
+---
+server_template:
+  name: Linux Box
+  description: A basic linux host.
+  tags:
+  - publisher:name=RightScale Open Source
+  boot_scripts: node.json
+  operational_scripts: []
+  decommission_scripts: []
+  inputs: node.json
+  frozen_repositories: []
+  multi_cloud_images:
+  - id: '322234001'
+    publication_id: '50759'
+  - id: '322233001'
+    publication_id: '50757'
+  - id: '322232001'
+    publication_id: '50758'
+  - id: '231153001'
+    publication_id: '35618'
+  - id: '31152001'
+    publication_id: '35617'
+  alerts:
+  - name: cpu busy
+    description: ''
+    file: cpu-0/cpu-idle
+    value: value
+    condition: <
+    threshold: '15'
+    duration: '3'
+    escalation_name: warning
+  - name: cpu I/O wait
+    description: ''
+    file: cpu-0/cpu-wait
+    value: value
+    condition: '>'
+    threshold: '40'
+    duration: '15'
+    escalation_name: warning
+  - name: cpu overloaded
+    description: ''
+    file: cpu-0/cpu-idle.value
+    value: value
+    condition: '>'
+    threshold: '3'
+    duration: '5'
+    escalation_name: critical
+  - name: high network rx activity
+    description: ''
+    file: interface/if_octets-eth0
+    value: rx
+    condition: '>'
+    threshold: '50000000'
+    duration: '30'
+    escalation_name: critical
+  - name: high network tx activity
+    description: ''
+    file: interface/if_octets-eth0
+    value: tx
+    condition: '>'
+    threshold: '50000000'
+    duration: '10'
+    escalation_name: critical
+  - name: instance not responding
+    description: ''
+    file: cpu-0/cpu-idle
+    value: value
+    condition: ==
+    threshold: NaN
+    duration: '5'
+    escalation_name: critical
+  - name: instance stranded
+    description: ''
+    file: RS/server-failure
+    value: state
+    condition: ==
+    threshold: stranded
+    duration: '1'
+    escalation_name: critical
+  - name: instance terminated
+    description: ''
+    file: RS/server
+    value: state
+    condition: ==
+    threshold: terminated
+    duration: '1'
+    escalation_name: critical
+  - name: low space in mnt partition
+    description: ''
+    file: df/df-mnt
+    value: free
+    condition: <
+    threshold: '10000000000'
+    duration: '5'
+    escalation_name: critical
+  - name: low space in root partition
+    description: ''
+    file: df/df-root
+    value: free
+    condition: <
+    threshold: '1000000000'
+    duration: '5'
+    escalation_name: critical
+  - name: low swap space
+    description: ''
+    file: swap/swap-free
+    value: value
+    condition: <
+    threshold: '100000000'
+    duration: '5'
+    escalation_name: critical
+  - name: memory low
+    description: ''
+    file: memory/memory-free
+    value: value
+    condition: <
+    threshold: '100'
+    'duration:': '1'
+    escalation_name: critical
+  - name: out of memory
+    description: ''
+    file: memory/memory-free
+    value: value
+    condition: ==
+    threshold: '0'
+    escalation_name: critical
