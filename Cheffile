@@ -15,7 +15,7 @@ cookbook 'cron',
 
 cookbook 'ntp',
   :git => 'https://github.com/opscode-cookbooks/ntp',
-  :ref => 'v1.4.0'
+  :ref => 'v1.5.0'
 
 cookbook 'postfix',
   :git => 'https://github.com/opscode-cookbooks/postfix',
