@@ -1,0 +1,100 @@
+{
+  "server_template": {
+    "name":"Linux Box",
+    "description":"A basic linux host.",
+    "boot_scripts": "node.json",
+    "operational_scripts": [],
+    "decommission_scripts": [],
+    "inputs": "node.json",
+    "multi_cloud_images": [
+      {
+        "id": "322234001",
+        "publication_id": "50759"
+      },
+      {
+        "id": "322233001",
+        "publication_id": "50757"
+      },
+      {
+        "id": "322232001",
+        "publication_id": "50758"
+      },
+      {
+        "id": "231153001",
+        "publication_id": "35618"
+      },
+      {
+        "id": "31152001",
+        "publication_id": "35617"
+      }
+    ],
+    "alerts": [
+      {
+        "name": "cpu busy",
+        "description":"",
+        "file": "cpu-0\/cpu-idle",
+        "value": "value",
+        "condition": "<",
+        "threshold": "15",
+        "duration": "3",
+        "escalation_name": "warning"
+      },
+      {
+        "name": "cpu I\/O wait",
+        "description":"",
+        "file": "cpu-0\/cpu-wait",
+        "value": "value",
+        "condition": ">",
+        "threshold": "40",
+        "duration": "15",
+        "escalation_name": "warning"
+      },
+      {
+        "name": "cpu overloaded",
+        "condition": "if cpu-0\/cpu-idle.value < \'3\' for 5 min then escalate to \'critical\'"
+      },
+      {
+        "name": "high network rx activity",
+        "condition": "if interface\/if_octets-eth0.rx > \'50000000\' for 30 min then escalate to \'critical\'"
+      },
+      {
+        "name": "high network tx activity",
+        "condition": "if interface\/if_octets-eth0.tx > \'50000000\' for 10 min then escalate to \'critical\'"
+      },
+      {
+        "name": "instance not responding",
+        "condition": "if cpu-0\/cpu-idle.value == \'NaN\' for 5 min then escalate to \'critical\'"
+      },
+      {
+        "name": "instance stranded",
+        "condition": "if RS\/server-failure.state == \'stranded\' for 1 min then escalate to 'critical'"
+      },
+      {
+        "name": "instance terminated",
+        "condition": "if RS\/server.state == \'terminated\' for 1 min then escalate to \'critical\'"
+      },
+      {
+        "name": "low space in mnt partition",
+        "condition": "if df\/df-mnt.free < \'10000000000\' for 5 min then escalate to \'critical\'"
+      },
+      {
+        "name": "low space in root partition",
+        "condition": "if df\/df-root.free < \'1000000000\' for 5 min then escalate to \'critical\'"
+      },
+      {
+        "name": "low swap space",
+        "condition": "if swap\/swap-free.value < \'100000000\' for 5 min then escalate to \'critical\'"
+      },
+      {
+        "name": "memory low",
+        "condition": "if memory\/memory-free.value < \'100\' for 1 min then escalate to \'critical\'"
+      },
+      {
+        "name": "out of memory",
+        "condition": "if memory\/memory-free.value == \'0\' for 1 min then escalate to \'critical\'"
+      }
+    ],
+    "frozen_repositories": [],
+    "tags": [ "publisher:name=RightScale Open Source" ]
+  }
+}
