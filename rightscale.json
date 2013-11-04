@@ -19,14 +19,15 @@
       },
       {
         "id": "322232001",
-        "publication_id": "50758"
+        "publication_id": "50758",
+        "default": true
       },
       {
         "id": "231153001",
         "publication_id": "35618"
       },
       {
-        "id": "31152001",
+        "id": "231152001",
         "publication_id": "35617"
       }
     ],
@@ -148,7 +149,7 @@
         "value": "value",
         "condition": "<",
         "threshold": "100",
-        "duration:": "1",
+        "duration": "1",
         "escalation_name": "critical"
       },
       {
@@ -158,6 +159,7 @@
         "value": "value",
         "condition": "==",
         "threshold": "0",
+        "duration": "1",
         "escalation_name": "critical"
       }
     ]
