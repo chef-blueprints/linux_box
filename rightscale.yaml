@@ -4,6 +4,7 @@ server_template:
   description: A basic linux host.
   tags:
   - publisher:name=RightScale Open Source
+  cookbooks: Cheffile
   boot_scripts: node.json
   operational_scripts: []
   decommission_scripts: []
