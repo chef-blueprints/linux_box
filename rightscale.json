@@ -1,13 +1,13 @@
 {
   "server_template": {
     "name":"Linux Box",
-    "description":"A basic linux host.",
+    "description":"![Tux](http:\/\/rightscale-oss.s3.amazonaws.com\/tux.png \"Tux\")\r\n\r\nLinux Box\r\n=========\r\n- - -\r\n\r\nA reference template for a base, no-frills Linux box. RightScale monitoring support not included.\r\n\r\n- - -\r\n\r\nThis is a RightScale OSS ServerTemplate supported by the community only.\r\n\r\n###For community support, feedback, bugs & enhancement requests:\r\n\r\n* [RightScale OSS Forums](https:\/\/forums.rightscale.com\/forumdisplay.php?f=39)\r\n* [#rightscale](irc:\/\/irc.freenode.net\/#rightscale) channel on Freenode IRC (irc.freenode.net)\r\n\r\nFor additional information, please see the [RightScale OSS Community](http:\/\/support.rightscale.com\/21-Community\/RightScale_OSS) page on the Support Portal.",
     "tags": [ "publisher:name=RightScale Open Source" ],
     "cookbooks": "Cheffile",
     "boot_scripts": "node.json",
     "operational_scripts": [],
     "decommission_scripts": [],
-    "inputs": "node.json",
+    "inputs": "share/chef/node.json.rightscale",
     "frozen_repositories": [],
     "multi_cloud_images": [
       {

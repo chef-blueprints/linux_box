@@ -1,14 +1,21 @@
 ---
 server_template:
   name: Linux Box
-  description: A basic linux host.
+  description: "![Tux](http://rightscale-oss.s3.amazonaws.com/tux.png \"Tux\")\r\n\r\nLinux
+    Box\r\n=========\r\n- - -\r\n\r\nA reference template for a base, no-frills Linux
+    box. RightScale monitoring support not included.\r\n\r\n- - -\r\n\r\nThis is a
+    RightScale OSS ServerTemplate supported by the community only.\r\n\r\n###For community
+    support, feedback, bugs & enhancement requests:\r\n\r\n* [RightScale OSS Forums](https://forums.rightscale.com/forumdisplay.php?f=39)\r\n*
+    [#rightscale](irc://irc.freenode.net/#rightscale) channel on Freenode IRC (irc.freenode.net)\r\n\r\nFor
+    additional information, please see the [RightScale OSS Community](http://support.rightscale.com/21-Community/RightScale_OSS)
+    page on the Support Portal."
   tags:
   - publisher:name=RightScale Open Source
   cookbooks: Cheffile
   boot_scripts: node.json
   operational_scripts: []
   decommission_scripts: []
-  inputs: node.json
+  inputs: share/chef/node.json.rightscale
   frozen_repositories: []
   multi_cloud_images:
   - id: '322234001'
@@ -27,7 +34,7 @@ server_template:
     description: ''
     file: cpu-0/cpu-idle
     value: value
-    condition: <
+    condition: "<"
     threshold: '15'
     duration: '3'
     escalation_name: warning
@@ -35,7 +42,7 @@ server_template:
     description: ''
     file: cpu-0/cpu-wait
     value: value
-    condition: '>'
+    condition: ">"
     threshold: '40'
     duration: '15'
     escalation_name: warning
@@ -43,7 +50,7 @@ server_template:
     description: ''
     file: cpu-0/cpu-idle.value
     value: value
-    condition: '>'
+    condition: ">"
     threshold: '3'
     duration: '5'
     escalation_name: critical
@@ -51,7 +58,7 @@ server_template:
     description: ''
     file: interface/if_octets-eth0
     value: rx
-    condition: '>'
+    condition: ">"
     threshold: '50000000'
     duration: '30'
     escalation_name: critical
@@ -59,7 +66,7 @@ server_template:
     description: ''
     file: interface/if_octets-eth0
     value: tx
-    condition: '>'
+    condition: ">"
     threshold: '50000000'
     duration: '10'
     escalation_name: critical
@@ -67,7 +74,7 @@ server_template:
     description: ''
     file: cpu-0/cpu-idle
     value: value
-    condition: ==
+    condition: "=="
     threshold: NaN
     duration: '5'
     escalation_name: critical
@@ -75,7 +82,7 @@ server_template:
     description: ''
     file: RS/server-failure
     value: state
-    condition: ==
+    condition: "=="
     threshold: stranded
     duration: '1'
     escalation_name: critical
@@ -83,7 +90,7 @@ server_template:
     description: ''
     file: RS/server
     value: state
-    condition: ==
+    condition: "=="
     threshold: terminated
     duration: '1'
     escalation_name: critical
@@ -91,7 +98,7 @@ server_template:
     description: ''
     file: df/df-mnt
     value: free
-    condition: <
+    condition: "<"
     threshold: '10000000000'
     duration: '5'
     escalation_name: critical
@@ -99,7 +106,7 @@ server_template:
     description: ''
     file: df/df-root
     value: free
-    condition: <
+    condition: "<"
     threshold: '1000000000'
     duration: '5'
     escalation_name: critical
@@ -107,7 +114,7 @@ server_template:
     description: ''
     file: swap/swap-free
     value: value
-    condition: <
+    condition: "<"
     threshold: '100000000'
     duration: '5'
     escalation_name: critical
@@ -115,7 +122,7 @@ server_template:
     description: ''
     file: memory/memory-free
     value: value
-    condition: <
+    condition: "<"
     threshold: '100'
     duration: '1'
     escalation_name: critical
@@ -123,7 +130,7 @@ server_template:
     description: ''
     file: memory/memory-free
     value: value
-    condition: ==
+    condition: "=="
     threshold: '0'
     duration: '1'
     escalation_name: critical
