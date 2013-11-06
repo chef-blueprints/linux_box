@@ -12,10 +12,10 @@ server_template:
   tags:
   - publisher:name=RightScale Open Source
   cookbooks: Cheffile
-  boot_scripts: node.json
+  inputs: share/chef/node.json.rightscale
+  boot_scripts: share/chef/node.json.rightscale
   operational_scripts: []
   decommission_scripts: []
-  inputs: share/chef/node.json.rightscale
   frozen_repositories: []
   multi_cloud_images:
   - id: '322234001'
