@@ -1,0 +1,16 @@
+{
+  "system": {
+    "short_hostname":"linux",
+    "domain_name":"localdomain",
+    "upgrade_packages":"false"
+  },
+  "authorization": {
+    "sudo": {
+      "groups": [ "rightscale" ],
+      "users": [ "rightscale" ],
+      "passwordless":"true",
+      "include_sudoers_d":"true"
+    }
+  },
+  "run_list": [ "recipe[system::default]", "recipe[system::update_package_list]", "recipe[system::upgrade_packages]", "recipe[ntp]", "recipe[resolver]", "recipe[cron]", "recipe[sudo]", "recipe[postfix]" ]
+}
